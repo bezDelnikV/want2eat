@@ -1,0 +1,685 @@
+.tool-bar {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: 30px;
+    background-color: #d32f2f;
+    padding-top: 69px;
+    margin: 0 auto;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.42857143;
+    display: flex;
+    font-weight: 600;
+    z-index: 10;
+    padding-left: 10.5%;
+}
+
+.tool-bar {
+    box-sizing: unset;
+}
+
+.tool-bar img {
+    margin-top: -3px;
+    width: 15px;
+}
+
+.tool-bar a {
+    padding: 0 20px;
+    padding-top: 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.tool-bar a:last-of-type {
+    color: #FFD125;
+}
+
+.main-basket {
+    width: 100%;
+    min-height: calc(100vh - 286px);
+}
+
+.main-basket:before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background-image: url(/img/2.png), url(/img/1.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: left 0 bottom 0, right 0 bottom 50%;
+    background-attachment: scroll, scroll;
+}
+
+.main-basket-container h1 {
+    font-size: 36px;
+    color: #000;
+    padding-bottom: 10px;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.1;
+    padding-top: 35px;
+}
+
+.change-address {
+    color: #979797;
+    height: 24px;
+    background: white;
+    background-repeat: no-repeat;
+    display: block;
+    font-size: 15px;
+    padding-bottom: 7px;
+    padding-top: 10px;
+    text-align: center;
+    box-sizing: unset;
+}
+
+.change-address:hover {
+    color: #E63616;
+    cursor: pointer;
+}
+
+.basket-container {
+    width: 80%;
+    margin: auto;
+}
+
+.change-address span:before {
+    content: '\e062';
+    font-family: 'Glyphicons Halflings';
+}
+
+.basket-container-item {
+    background: white;
+}
+
+.basket-container-item-header {
+    width: 97%;
+    display: inline-flex;
+    margin: auto auto auto 2%;
+}
+
+.basket-container-item-header img {
+    width: 14%;
+    object-fit: contain;
+    margin: 20px 20px 15px 0;
+    display: flex;
+    float: left;
+    height: calc(80vw * 0.97 * 0.14);
+    background-size: cover;
+}
+
+.basket-container-item-header h4 {
+    float: left;
+    font-size: 26px;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    place-self: center;
+}
+
+.basket-container-item-content {
+    width: 90%;
+    margin: auto;
+}
+
+.dish-info-item {
+    display: flex;
+    width: calc(100% - 40px);
+    padding: 0 20px;
+    border-top: #c5c7c7 dashed 2px;
+}
+
+.dish-info-item > div {
+    margin: 20px 0;
+    float: left;
+    line-height: 1.42857143;
+}
+
+.close-dish-info-item {
+    width: 40px;
+}
+
+.info-dish-price {
+    display: flex;
+    min-height: 80px;
+}
+
+.close-dish-info-item button {
+    outline: none;
+    text-decoration: none;
+    border: none;
+    background: none;
+    width: 20px;
+    height: 20px;
+    color: #616161;
+}
+
+.close-dish-info-item button:hover {
+    color: black;
+}
+
+.close-dish-info-item button:before {
+    content: '\e014';
+    font-family: 'Glyphicons Halflings';
+    font-size: 18px
+}
+
+.content-dish-info-item {
+    width: calc(100% - 40px);
+}
+
+.info-dish-price h4 {
+    max-height: 24px;
+    overflow: hidden;
+    text-transform: uppercase;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 10px;
+    width: calc(35% - 49px);
+    float: left;
+}
+
+.info-dish-price p {
+    width: calc(25% - 25px);
+    float: left;
+    margin-left: 12px;
+    max-height: 26px;
+    overflow: hidden;
+    font-size: 18px;
+    color: #979797;
+}
+
+.info-dish-price p:last-of-type {
+    overflow: inherit;
+}
+
+.content-dish-info-item-buttons {
+    width: 90px;
+}
+
+.content-dish-info-item-buttons {
+    float: left;
+    margin-left: 10px;
+}
+
+.info-dish-price p:last-of-type {
+    text-align: right;
+    position: relative;
+}
+
+.info-dish-price p:last-of-type:after {
+    content: 'грн';
+    position: absolute;
+    right: -50px;
+}
+
+.content-dish-info-item-buttons button {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 700;
+    border: 1px solid #C4C4C4;
+    outline: none;
+}
+
+.content-dish-info-item-buttons button:first-of-type {
+    color: black;
+    float: left;
+    background: white;
+    line-height: 0;
+}
+
+.content-dish-info-item-buttons button:last-of-type {
+    color: white;
+    background: black;
+    border: none;
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+
+.content-dish-info-item-buttons input {
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    border: 1px solid #C4C4C4;
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    float: left;
+    border-radius: 0;
+}
+
+.dish-info-pack h4 {
+    text-transform: uppercase;
+    color: #000;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-bottom: 10px;
+    width: calc(35% - 49px);
+    float: left;
+}
+
+.content-dish-info-item p:nth-last-of-type, .content-dish-info-item h4 {
+    overflow: hidden;
+}
+
+.dish-info-pack p {
+    margin-left: 10px;
+    width: calc(25% - 25px);
+    float: left;
+    font-size: 18px;
+    color: #979797;
+}
+
+.dish-info-pack p:not(:last-of-type) {
+    overflow: hidden;
+    max-height: 26px;
+}
+
+
+.dish-info-pack p:last-of-type {
+    width: calc(25% + 78px);
+    position: relative;
+    text-align: end;
+    margin-left: 10px;
+}
+
+.dish-info-pack p:last-of-type:after {
+    content: 'грн';
+    position: absolute;
+    right: -50px;
+}
+
+.basket-container-suma {
+    border-top: dashed 2px #E63616;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    padding: 15px 0;
+    color: #d32f2f;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.basket-container-suma p:before {
+    content: 'Сума ';
+    color: #d32f2f;
+    position: absolute;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: -100px;
+    font-size: 18px;
+}
+
+.basket-container-suma p:after {
+    content: 'Грн ';
+    color: #d32f2f;
+    position: absolute;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+.basket-shop-suma {
+    width: 100%;
+    display: inline-block;
+    margin: 30px 0;
+    background: #f5f5f5;
+}
+
+.basket-shop-suma button {
+    font-size: 18px;
+    font-weight: 700;
+    outline: none;
+    padding: 10px 50px;
+}
+
+.active-btn {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+.disable-btn {
+    border: 1px solid #979797;
+    background-color: #f2f2f2;
+    color: #979797;
+}
+
+.basket-shop-suma p {
+    float: right;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 700;
+    padding-top: 5px;
+    margin-right: 10px;
+    min-width: 90px;
+    position: relative;
+    text-align: right;
+}
+
+.basket-shop-suma p:after {
+    content: ' грн';
+}
+
+.basket-shop-suma p:before {
+    content: 'Всього';
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    position: absolute;
+    left: -120px;
+}
+
+.suma-all-delivery {
+    border-top: 1px dashed #E63616;
+    padding-top: 30px;
+    font-size: 23px;
+    color: #E63616;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.suma-all-delivery h3 {
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.suma-all-delivery p {
+    margin: 15px auto;
+}
+
+.suma-all-delivery p:after {
+    content: ' Грн';
+    text-transform: uppercase;
+}
+
+
+.suma-all-delivery button {
+    max-width: 360px;
+    width: 100%;
+    margin: 0 auto 50px;
+    height: 50px;
+    text-transform: uppercase;
+    outline: none !important;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    background: #E63616;
+    border-radius: 26px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-top: 50px;
+}
+
+.suma-all-delivery button:hover {
+    color: #fff;
+    text-decoration: none;
+    background: #F16A61;
+}
+
+.basket-shop-suma button {
+    cursor: pointer;
+}
+
+.footer a:hover, footer a:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+    .basket-container {
+        width: 85%;
+    }
+    .basket-container-item-header img {
+        height: calc(85vw * 0.97 * 0.14);
+    }
+}
+
+@media (max-width: 1100px) {
+    .basket-container {
+        width: 90%;
+    }
+
+    .basket-container-item-header img {
+        width: 15%;
+        height: calc(90vw * 0.97 * 0.15);
+    }
+}
+
+@media (max-width: 1023px) {
+
+    .main-shop:before {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .basket-container-item-header img {
+        width: 16%;
+        height: calc(95vw * 0.97 * 0.16);
+    }
+
+    .basket-container-item-content {
+        width: 95%;
+    }
+
+    .basket-container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 900px) {
+    .dish-info-item {
+        width: calc(100% - 20px);
+        padding: 0;
+        margin: auto;
+    }
+
+}
+
+@media (max-width: 850px) {
+    .basket-shop-suma button {
+        margin: 10px;
+    }
+
+    .basket-shop-suma {
+        margin: 30px auto;
+        width: auto;
+        text-align: center;
+    }
+
+    .basket-shop-suma p:before {
+        position: inherit;
+        left: -20px;
+    }
+
+    .basket-shop-suma p:after {
+        position: inherit;
+        right: -20px;
+    }
+
+    .container-for-item {
+        text-align: center;
+    }
+
+    .basket-shop-suma p {
+        width: 100%;
+        text-align: center;
+    }
+
+    .close-dish-info-item {
+        width: 25px;
+    }
+
+    .info-dish-price h4 {
+        width: 50%;
+        text-align: center;
+        max-height: 24px;
+        overflow: hidden;
+        float: left;
+    }
+
+    .info-dish-price p:first-of-type {
+        width: calc(50% - 25px);
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .info-dish-price p:last-of-type {
+        width: 50%;
+        text-align: center;
+        margin-left: 0;
+        overflow: hidden;
+    }
+
+    .info-dish-price p:last-of-type:after {
+        content: 'грн';
+        position: inherit;
+        right: auto;
+        margin-left: 5px;
+    }
+
+    .info-dish-price {
+        width: 100%;
+        display: table;
+    }
+
+    .content-dish-info-item-buttons {
+        width: 90px;
+        float: left;
+        display: flex;
+        text-align: center;
+        margin: 0 calc(25% - 45px);
+    }
+
+    .dish-info-pack h4 {
+        text-align: center;
+        width: 35%;
+    }
+
+    .dish-info-pack p {
+        margin-left: 10px;
+        width: calc(25% - 10px);
+        text-align: center;
+    }
+
+    .dish-info-pack p:last-of-type {
+        margin-left: 10px;
+        width: calc(40% - 10px);
+        text-align: center;
+        transform: translateX(calc(-12.5% - 7px));
+    }
+
+    .dish-info-pack p:last-of-type:after {
+        position: inherit;
+        right: auto;
+        margin-left: 5px;
+    }
+
+    .basket-container-item-header img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 600px) {
+    .tool-bar {
+        padding-left: 0;
+        overflow: hidden;
+    }
+
+    .info-dish-price h4 {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .basket-container-item-header img {
+        width: 120px;
+    }
+
+    .info-dish-price p:first-of-type {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .content-dish-info-item-buttons {
+        width: 90px;
+        margin: 10px calc(50% - 45px);
+    }
+
+    .info-dish-price p:last-of-type {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .dish-info-pack h4 {
+        width: 100%;
+        margin: 10px 0;
+        border-top: 1px dashed black;
+    }
+
+    .dish-info-pack p {
+        margin: 0;
+        width: 50%;
+        text-align: center;
+        transform: none;
+    }
+
+    .dish-info-pack p:last-of-type {
+
+        margin: 0;
+        width: 50%;
+        text-align: center;
+        transform: none;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .suma-all-delivery button {
+        max-width: 250px;
+        font-size: 20px;
+        border-radius: 60px;
+        height: 60px;
+        line-height: 23px;
+    }
+
+    .suma-all-delivery h3 {
+        font-size: 22px;
+    }
+
+    .main-basket:before {
+        background-size: 50%, 50%;
+    }
+
+    .tool-bar a {
+        padding: 9px 10px 0 10px;
+        font-size: 12px;
+    }
+
+    .basket-container-item-header img {
+        width: 100px;
+        height: 100px;
+    }
+}
