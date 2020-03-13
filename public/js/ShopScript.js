@@ -146,7 +146,7 @@ function generateBreadShopWindow() {
                 '@type': 'ListItem',
                 'position': 2,
                 'name': 'Доставка їжі Рівне. Піца, суші та інші страви з ресторанів - Хочу Їсти',
-                'item': 'http://www.testbezdelnik.pp.ua/shops',
+                'item': window.location.hostname+'/shops',
             },
             {
                 '@type': 'ListItem',

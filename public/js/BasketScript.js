@@ -11,6 +11,7 @@ $(document).ready(function () {
         elemIds = elemIds.substring(0, elemIds.length - 1);
         generateContent(elemIds, elements);
     }
+
 });
 
 function recountAllFullPrice() {
@@ -442,7 +443,7 @@ function recountProdPrice(propertyId, shopId) {
 function closeResult() {
     $('#modal-window-result').attr('style', 'display:none');
     $('body').removeAttr('style');
-    window.location.href = "http://www.testbezdelnik.pp.ua";
+    window.location.href = "/";
 }
 
 function generateBreadBasketWindow() {

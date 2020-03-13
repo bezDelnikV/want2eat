@@ -205,7 +205,7 @@ function generateProductsJsonLd(prod_id, index = 0) {
                         '@type': 'Product',
                         'name': prod_item['name'],
                         'image': [
-                            prod_item['photo_url'] == '' ? 'http://www.testbezdelnik.pp.ua/img/thumb-small.png' : 'http://adm.want2eat.com.ua/images/' + prod_item['photo_url'],
+                            prod_item['photo_url'] == '' ? window.location.hostname + '/img/thumb-small.png' : 'http://adm.want2eat.com.ua/images/' + prod_item['photo_url'],
                         ],
                         'description': prod_item['info'],
                         "offers": {
@@ -252,13 +252,13 @@ function generateBreadProductWindow() {
                 '@type': 'ListItem',
                 'position': 2,
                 'name': 'Доставка їжі Рівне. Піца, суші та інші страви з ресторанів - Хочу Їсти',
-                'item': 'http://www.testbezdelnik.pp.ua/shops',
+                'item': window.location.hostname + '/shops',
             },
             {
                 '@type': 'ListItem',
                 'position': 3,
                 'name': 'Доставка їжі Рівне. Піца, суші та інші страви з ресторанів - Хочу Їсти',
-                'item': 'http://www.testbezdelnik.pp.ua/shop/' + location.href.split('/')[4],
+                'item': window.location.hostname + '/shop/' + location.href.split('/')[4],
             },
             {
                 '@type': 'ListItem',

@@ -18,12 +18,12 @@ class C6SitemapCommand extends Command
         $count = 0;
         $sitemap_count = 1;
         self::$currentDate = Carbon::now()->format('Y-m-d');
-        $site_url = 'http://www.testbezdelnik.pp.ua';
+        $site_url = asset('');
         $xml_document = self::xmlDocumentStart();
         $this->info($site_url);
         self::urlXmlElement($xml_document, $site_url, 1);
-        $this->info($site_url . '/shops');
-        self::urlXmlElement($xml_document, $site_url . '/shops', 0.8);
+        $this->info($site_url . 'shops');
+        self::urlXmlElement($xml_document, $site_url . 'shops', 0.8);
         $count = 2;
         $shops = DB::table('shop')->select('id')->where('status_id', null)->where('is_hidden', '0')->get('id');
         foreach ($shops->pluck('id') as $shop_id) {
@@ -34,14 +34,14 @@ class C6SitemapCommand extends Command
                 $sitemap_count++;
             }
             $count++;
-            self::urlXmlElement($xml_document, $site_url . '/shop/' . $shop_id);
+            self::urlXmlElement($xml_document, $site_url . 'shop/' . $shop_id);
         }
 
         foreach ($shops->pluck('id') as $shop_id) {
             $products_category = DB::table('product_category')->where('is_empty', '=', '0')->where('is_hidden', '=', '0')->where('shop_id', $shop_id)->get();
             foreach ($products_category->pluck('id') as $category_id) {
 //                $this->info($site_url . '/shop/' . $shop_id . '/product/' . $category_id);
-                self::urlXmlElement($xml_document, $site_url . '/shop/' . $shop_id . '/product/' . $category_id);
+                self::urlXmlElement($xml_document, $site_url . 'shop/' . $shop_id . '/product/' . $category_id);
                 $count++;
                 $products = DB::table('product')->where('product_category_id', '=', $category_id)->where('is_hidden', '=', '0')->get();
                 foreach ($products->pluck('id') as $product_id) {
@@ -52,12 +52,12 @@ class C6SitemapCommand extends Command
                         $sitemap_count++;
                     }
                     $count++;
-                    self::urlXmlElement($xml_document, $site_url . '/shop/' . $shop_id . '/product/' . $category_id . '/' . $product_id);
+                    self::urlXmlElement($xml_document, $site_url . 'shop/' . $shop_id . '/product/' . $category_id . '/' . $product_id);
                 }
             }
         }
 
-        self::urlXmlElement($xml_document, $site_url . '/cart', 0.3);
+        self::urlXmlElement($xml_document, $site_url . 'cart', 0.3);
         self::xmlDocumentSave($sitemap_count);
         $this->info($sitemap_count, 'sitemap');
 

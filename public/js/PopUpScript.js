@@ -59,7 +59,7 @@ function generateJsonLd(prod) {
         '@type': 'Product',
         'name': prod['name'],
         'image': [
-            prod['photo_url'] == '' ? 'http://www.testbezdelnik.pp.ua/img/thumb-small.png' : 'http://adm.want2eat.com.ua/images/' + prod['photo_url'],
+            prod['photo_url'] == '' ? window.location.hostname+'/img/thumb-small.png' : 'http://adm.want2eat.com.ua/images/' + prod['photo_url'],
         ],
         'description': prod['info'],
         "offers": {

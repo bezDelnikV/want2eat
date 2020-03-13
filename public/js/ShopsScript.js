@@ -125,12 +125,12 @@ function generateJsonLD(shops_id, index = 0) {
                 index++;
                 let jsonLD_item = {
                     "@type": "ListItem",
-                    "position": '' + index ,
+                    "position": '' + index,
                     "item": {
                         "@context": "https://schema.org",
                         "@type": "Store",
                         "image": 'http://adm.want2eat.com.ua/images/' + shop.photo_url,
-                        "url": "http://www.testbezdelnik.pp.ua/shop/" + shop.id,
+                        "url": window.location.hostname + "/shop/" + shop.id,
                         "name": shop.name,
                         "address": {
                             "@type": "PostalAddress",
@@ -193,7 +193,7 @@ function generateJsonLD(shops_id, index = 0) {
                 };
                 jsonLD['itemListElement'].push(jsonLD_item);
                 generateJsonLD(shops_id, index);
-                if(shops_id.length==index){
+                if (shops_id.length == index) {
                     let script = document.createElement('script');
                     script.type = "application/ld+json";
                     script.innerHTML = JSON.stringify(jsonLD);
@@ -203,6 +203,7 @@ function generateJsonLD(shops_id, index = 0) {
         });
     }
 }
+
 function generateBreadFirstWindow() {
     let jsonBreadcrumb = {
         '@context': "https://schema.org",
@@ -212,7 +213,7 @@ function generateBreadFirstWindow() {
                 '@type': 'ListItem',
                 'position': 1,
                 'name': 'Доставка їжі Рівне. Піца, суші та інші страви з ресторанів - Хочу Їсти',
-                'item': 'http://www.testbezdelnik.pp.ua/',
+                'item': window.location.hostname,
             },
             {
                 '@type': 'ListItem',
