@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f87b0092-3c2e-4b99-ba43-59baddba3dc0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Console/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Kernel.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -215,7 +216,7 @@
       <workItem from="1583776678857" duration="504000" />
       <workItem from="1584041135560" duration="523000" />
       <workItem from="1584048149184" duration="12000" />
-      <workItem from="1584052012061" duration="7850000" />
+      <workItem from="1584052012061" duration="9308000" />
     </task>
     <servers />
   </component>
