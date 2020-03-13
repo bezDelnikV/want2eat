@@ -112,7 +112,7 @@ class C6SitemapCommand extends Command
 
         for ($i = 1; $i <= $count_part; $i++) {
             $xml->startElement('sitemap');
-            $xml->writeElement('loc', '/public/' . self::$subdomain . $pathSitemap . '/sitemap' . $count_part . '.xml');
+            $xml->writeElement('loc', '/' . self::$subdomain . $pathSitemap . '/sitemap' . $count_part . '.xml');
             $xml->writeElement('lastmod', self::$currentDate);
             $xml->endElement();
         }
