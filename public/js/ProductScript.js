@@ -57,7 +57,7 @@ $(document).ready(function () {
 
 function GenerateContent(id, categoryId) {
     $.ajax({
-        url: 'http://adm.want2eat.com.ua/api/product-category/from-shop?shop_id=' + id,
+        url: 'https://adm.want2eat.com.ua/api/product-category/from-shop?shop_id=' + id,
         method: "GET",
         success: function (data) {
             $('#main-container').append($('<div>')
@@ -142,7 +142,7 @@ function GenerateContent(id, categoryId) {
 
 function GenerateProduct(id, prodId) {
     $.ajax({
-        url: 'http://adm.want2eat.com.ua/api/product/from-product-category?shop_id=' + id + '&product_category_id=' + prodId + '&skip=0&take=50',
+        url: 'https://adm.want2eat.com.ua/api/product/from-product-category?shop_id=' + id + '&product_category_id=' + prodId + '&skip=0&take=50',
         method: "GET",
         success: function (data) {
             data.data.products.forEach(item => {
@@ -192,7 +192,7 @@ function GenerateProduct(id, prodId) {
 function generateProductsJsonLd(prod_id, index = 0) {
     if (prod_id.length > index) {
         $.ajax({
-            url: 'http://adm.want2eat.com.ua/api/product/?product_id=' + prod_id[index],
+            url: 'https://adm.want2eat.com.ua/api/product/?product_id=' + prod_id[index],
             method: "GET",
             success: function (data) {
                 index++;

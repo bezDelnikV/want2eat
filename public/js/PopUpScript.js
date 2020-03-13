@@ -24,7 +24,7 @@ function openModal(val) {
 
 function openModalDish(id, with_json_ld = false) {
     $.ajax({
-        url: 'http://adm.want2eat.com.ua/api/product/?product_id=' + id,
+        url: 'https://adm.want2eat.com.ua/api/product/?product_id=' + id,
         method: "GET",
         success: function (data) {
             with_json_ld ? generateJsonLd(data.data.product) : false;
@@ -115,7 +115,7 @@ function addToCart() {
 function authorize() {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($('#email-enter').val())) {
         $.ajax({
-            url: 'http://adm.want2eat.com.ua/api/auth/?',
+            url: 'https://adm.want2eat.com.ua/api/auth/?',
             method: 'POST',
             dataType: 'json',
             data: {
@@ -159,7 +159,7 @@ function register() {
         alert('Паролі не збігаються');
     } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($('#email-register').val())) {
         $.ajax({
-            url: 'http://adm.want2eat.com.ua/api/auth/?',
+            url: 'https://adm.want2eat.com.ua/api/auth/?',
             method: 'POST',
             dataType: 'json',
             data: {
@@ -287,7 +287,7 @@ function generateProfile() {
 
 function logout() {
     $.ajax({
-        url: 'http://adm.want2eat.com.ua/api/auth/logout/',
+        url: 'https://adm.want2eat.com.ua/api/auth/logout/',
         method: 'POST',
         dataType: 'json',
         data: {
@@ -353,7 +353,7 @@ function update() {
 
     if (validate) {
         $.ajax({
-            url: 'http://adm.want2eat.com.ua/api/auth/update/',
+            url: 'https://adm.want2eat.com.ua/api/auth/update/',
             method: 'POST',
             dataType: 'json',
             data: data,

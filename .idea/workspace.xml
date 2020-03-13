@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f87b0092-3c2e-4b99-ba43-59baddba3dc0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/Commands/C6SitemapCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/Commands/C6SitemapCommand.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/BasketScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/BasketScript.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/IndexScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/IndexScript.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/PopUpScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/PopUpScript.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/ProductScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/ProductScript.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/ShopScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/ShopScript.js" afterDir="false" />
@@ -222,7 +221,7 @@
       <workItem from="1583776678857" duration="504000" />
       <workItem from="1584041135560" duration="523000" />
       <workItem from="1584048149184" duration="12000" />
-      <workItem from="1584052012061" duration="4473000" />
+      <workItem from="1584052012061" duration="5322000" />
     </task>
     <servers />
   </component>
@@ -250,10 +249,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="337" y="184" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1584048157704" />
-    <state x="336" y="97" width="788" height="619" key="find.popup" timestamp="1584057934298">
+    <state x="336" y="97" width="788" height="619" key="find.popup" timestamp="1584059152408">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="336" y="97" width="788" height="619" key="find.popup/0.0.1280.720@0.0.1280.720" timestamp="1584057934298" />
+    <state x="336" y="97" width="788" height="619" key="find.popup/0.0.1280.720@0.0.1280.720" timestamp="1584059152408" />
     <state x="478" y="90" key="ftp.server.browser" timestamp="1583776912423">
       <screen x="0" y="0" width="1280" height="720" />
     </state>

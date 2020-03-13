@@ -4,7 +4,7 @@ $(document).ready(function () {
 
 function GenerateContent(id) {
     $.ajax({
-        url: 'http://adm.want2eat.com.ua/api/product-category/from-shop?shop_id=' + id,
+        url: 'https://adm.want2eat.com.ua/api/product-category/from-shop?shop_id=' + id,
         method: "GET",
         success: function (data) {
             $('#main-container')

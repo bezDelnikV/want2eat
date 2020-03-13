@@ -8,9 +8,9 @@ $(document).ready(function () {
 
     let tmpId = location.href.split('/').pop();
     if (tmpId == 'shops') {
-        createMenu('http://adm.want2eat.com.ua/api/shop/');
+        createMenu('https://adm.want2eat.com.ua/api/shop/');
     } else {
-        createMenu('http://adm.want2eat.com.ua/api/shop/from-filter-category?filter_category=' + tmpId);
+        createMenu('https://adm.want2eat.com.ua/api/shop/from-filter-category?filter_category=' + tmpId);
     }
 
 });
@@ -118,7 +118,7 @@ function createMenu(filter) {
 function generateJsonLD(shops_id, index = 0) {
     if (shops_id.length > index) {
         $.ajax({
-            url: 'http://adm.want2eat.com.ua/api/shop/?shop_id=' + shops_id[index],
+            url: 'https://adm.want2eat.com.ua/api/shop/?shop_id=' + shops_id[index],
             method: "GET",
             success(data) {
                 let shop = data.data.shop_detail;

@@ -103,7 +103,7 @@ function getGeocode(address, end_address = false) {
 
 function getRegion() {
     $.ajax({
-        url: 'http://adm.want2eat.com.ua/api/settings/client/?region_id=1',
+        url: 'https://adm.want2eat.com.ua/api/settings/client/?region_id=1',
         method: "GET",
         success: function (data) {
             RegionSettings['settings'] = data.data.settings;
@@ -144,7 +144,7 @@ function shopSettingsRecount(shop_id, recount = false) {
 
 function generateContent(elements, storage) {
     $.ajax({
-        url: 'http://adm.want2eat.com.ua/api/product-property/from-order/?product_property_ids=' + elements,
+        url: 'https://adm.want2eat.com.ua/api/product-property/from-order/?product_property_ids=' + elements,
         method: "GET",
         success: function (data) {
             console.log(data);
@@ -368,7 +368,7 @@ function send() {
             date_delivery = moment(client_info['date_delivery'], 'DD-MM-YYYY HH:mm').unix();
         }
         $.ajax({
-            url: 'http://adm.want2eat.com.ua/api/order/create/',
+            url: 'https://adm.want2eat.com.ua/api/order/create/',
             method: 'POST',
             dataType: 'json',
             data: {

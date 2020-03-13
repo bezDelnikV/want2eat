@@ -40,7 +40,7 @@ $('#mobile-app-carousel').owlCarousel({
 
 function createMenu() {
     $.ajax({
-        url: "http://adm.want2eat.com.ua/api/filter-category/",
+        url: "https://adm.want2eat.com.ua/api/filter-category/",
         method: "GET",
         success: function (data) {
             data.data.filterCategory.forEach(element => {
