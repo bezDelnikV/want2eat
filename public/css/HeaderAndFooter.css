@@ -9,6 +9,7 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    cursor: default!important;
 }
 
 a {
@@ -32,11 +33,13 @@ ul {
 
 p {
     margin: 0;
+    cursor: default;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0;
+    cursor: default;
 }
 
 *, *:before, *:after {
@@ -142,6 +145,7 @@ ul.header-menu li a {
 .footer div {
     float: left;
     margin: 35px 10px;
+    cursor: default;
 }
 
 .footer a {

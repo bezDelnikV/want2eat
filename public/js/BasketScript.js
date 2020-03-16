@@ -38,14 +38,16 @@ function deliveryDistance(shop_address, client_address, region_address, category
             let delivery_min_price = parseInt(RegionSettings['settings'].find(el => el['settings_key_id'] == 'delivery_min_price')['value']);
             let delivery_price_for_km = parseInt(RegionSettings['settings'].find(el => el['settings_key_id'] == 'delivery_price_for_km')['value']);
             let delivery_price = 0;
-            rout['legs'].forEach(el => {
-                distance_delivery += el['distance']['value'];
-            });
-            distance_delivery = distance_delivery / 1000;
-            if (distance_delivery <= delivery_min_distance) {
-                delivery_price = delivery_min_price;
-            } else {
-                delivery_price = delivery_min_price + ((distance_delivery - delivery_min_distance) * delivery_price_for_km);
+            if(rout!=undefined) {
+                rout['legs'].forEach(el => {
+                    distance_delivery += el['distance']['value'];
+                });
+                distance_delivery = distance_delivery / 1000;
+                if (distance_delivery <= delivery_min_distance) {
+                    delivery_price = delivery_min_price;
+                } else {
+                    delivery_price = delivery_min_price + ((distance_delivery - delivery_min_distance) * delivery_price_for_km);
+                }
             }
             ShopDeliveryInfo[iterator]['delivery_start_price'] = delivery_price;
             let buttons = $('#delivery-button-shop-id-' + ShopDeliveryInfo[iterator]['id']).parent().children();
@@ -147,7 +149,7 @@ function generateContent(elements, storage) {
         url: 'https://adm.want2eat.com.ua/api/product-property/from-order/?product_property_ids=' + elements,
         method: "GET",
         success: function (data) {
-            console.log(data);
+            // console.log(data);
             let shops = data.data['shopFromPropertyProducts'];
             shops.forEach(shop => {
                 let element = JSON.parse(sessionStorage.getItem('elements'));
@@ -276,7 +278,7 @@ function incrementCount(shopId, prodId) {
     let element = JSON.parse(sessionStorage.getItem('elements'));
     let id = element.findIndex(elem => elem['product_property'] == prodId);
     let shop = ShopDeliveryInfo.find(el => el['id'] == shopId);
-    console.log(shop['productProperties'].find(el => el['product_property_id'])['count']);
+    // console.log(shop['productProperties'].find(el => el['product_property_id'])['count']);
     shop['productProperties'].find(el => el['product_property_id'] == prodId)['count'] += 1;
 
     element[id]['count'] = parseInt(element[id]['count']) + 1;
@@ -305,7 +307,7 @@ function changeBtn(element, shop_id) {
 }
 
 function deleteProd(btn, prodId) {
-    console.log(ShopDeliveryInfo);
+    // console.log(ShopDeliveryInfo);
     let shop = ShopDeliveryInfo.find(el => el['productProperties'].find(item => item['product_property_id'] == prodId) != undefined);
     let product_index = shop['productProperties'].findIndex(el => el['product_property_id'] == prodId);
     shop['productProperties'].splice(product_index, 1);
@@ -387,7 +389,7 @@ function send() {
                 date_delivery: date_delivery,
             },
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 if (data['code'] == 200) {
                     $('#popup-result-span').empty();
                     $('#popup-result-span').append(data.data.order.id);

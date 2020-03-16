@@ -100,9 +100,9 @@ function addToCart() {
             elements.push(product);
             sessionStorage.setItem('elements', JSON.stringify(elements));
         } else {
-            console.log(elements[exist]);
+            // console.log(elements[exist]);
             elements[exist]['count']++;
-            console.log(elements[exist]);
+            // console.log(elements[exist]);
             sessionStorage.setItem('elements', JSON.stringify(elements));
         }
     }
@@ -123,7 +123,7 @@ function authorize() {
                 password: $.md5($('#password-enter').val())
             },
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 if (data.code == 200) {
                     localStorage.setItem('token', data.data.user.token);
                     delete data.data.user.token;
@@ -241,7 +241,7 @@ function clientAddressInfo(redirect = false) {
             getGeocode(client_info['street-order'] + ', ' + client_info['build-order'] + ', ' + client_info['city-order']);
         }
     } else {
-        console.log(validate);
+        // console.log(validate);
         alert("Будь-ласка, заповніть всі необхідні поля правильно!");
     }
 }
@@ -320,8 +320,8 @@ function update() {
     let phone = $('#profile-phone').val();
     let password = $('#profile-password').val();
     let validate = true;
-    console.log('first_name', first_name);
-    console.log('last_name', last_name);
+    // console.log('first_name', first_name);
+    // console.log('last_name', last_name);
     data = {
         'token': localStorage.getItem('token'),
         'phone': phone,
@@ -358,7 +358,7 @@ function update() {
             dataType: 'json',
             data: data,
             success: function (data) {
-                console.log(data);
+                // console.log(data);
                 $('#profile-password').empty();
                 $('#profile-password-repeat').empty();
             },

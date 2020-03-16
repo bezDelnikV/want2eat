@@ -99,7 +99,7 @@ function GenerateContent(id, categoryId) {
                             .append($('<div>')
                                 .append($('<p>').append('Час доставки'))
                                 .append($('<img>').attr('src', '/img/clock.svg'))
-                                .append($('<p>').append('Від ' + data.data.shop[0].delivery_price_min + ' грн')))
+                                .append($('<p>').append('Від ' + data.data.shop[0].delivery_price_min + ' хв')))
                             .append($('<div>')
                                 .append($('<p>').append('Вартість доставки'))
                                 .append($('<img>').attr('src', '/img/car.svg'))

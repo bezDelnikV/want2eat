@@ -192,6 +192,7 @@ h2 {
     float: left;
     width: 402px;
     text-transform: uppercase;
+    cursor: default;
 }
 
 .mobile-app span {

@@ -69,7 +69,7 @@
     <div class="main-footer-social">СПОСТЕРІГАЙ ЗА НАМИ ЧЕРЕЗ СОЦМЕРЕЖІ:</div>
     <div class="main-footer-social-links">
         <a href="https://www.instagram.com/hochu_isti"><img class="lazyload" data-src="/img/instagram.svg"></a>
-        <a href="https://www.instagram.com/hochu_isti"><img class="lazyload" data-src="/img/fb.svg"></a><br>
+        <a href="https://www.facebook.com/hochu.isti"><img class="lazyload" data-src="/img/fb.svg"></a><br>
     </div>
 </div>
 <script src="{{ asset('/js/jquery.min.js') }}"></script>

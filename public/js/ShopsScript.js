@@ -110,7 +110,7 @@ function createMenu(filter) {
                     )
             });
             generateJsonLD(data.data.shops.map(el => el.id));
-            console.log(jsonLD);
+            // console.log(jsonLD);
         }
     });
 }

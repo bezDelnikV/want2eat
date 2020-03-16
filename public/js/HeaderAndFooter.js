@@ -7,7 +7,7 @@ function changeStatus() {
         $('.header-btn').attr('class', 'header-btn');
 
     }
-    console.log($('#header-menu').attr('class'));
+    // console.log($('#header-menu').attr('class'));
 }
 
 $(document).ready(function () {
@@ -58,7 +58,7 @@ function recountBasketItem() {
     $('#count-delivery-dish').empty();
     if (basket != null) {
         if (basket.length > 0) {
-            console.log(basket);
+            // console.log(basket);
             basket.forEach(el => count += parseInt(el['count']));
             $('#count-delivery-dish').append('(' + count + ')');
         } else {
