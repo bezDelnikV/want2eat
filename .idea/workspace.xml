@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f87b0092-3c2e-4b99-ba43-59baddba3dc0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/HeaderAndFooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/HeaderAndFooter.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/IndexStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/IndexStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/BasketScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/BasketScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/HeaderAndFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/HeaderAndFooter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/PopUpScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/PopUpScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/ProductScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/ProductScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/ShopScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/ShopScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/ShopsScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/ShopsScript.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/HeaderAndFooter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/HeaderAndFooter.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -225,7 +217,8 @@
       <workItem from="1584041135560" duration="523000" />
       <workItem from="1584048149184" duration="12000" />
       <workItem from="1584052012061" duration="9821000" />
-      <workItem from="1584384378116" duration="1590000" />
+      <workItem from="1584384378116" duration="2300000" />
+      <workItem from="1584444163544" duration="301000" />
     </task>
     <servers />
   </component>
@@ -249,10 +242,10 @@
       <screen x="0" y="0" width="1280" height="720" />
     </state>
     <state x="142" y="3" key="SettingsEditor/0.0.1280.720@0.0.1280.720" timestamp="1580419964900" />
-    <state x="337" y="184" key="com.intellij.ide.util.TipDialog" timestamp="1584384377657">
+    <state x="337" y="184" key="com.intellij.ide.util.TipDialog" timestamp="1584444162954">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
-    <state x="337" y="184" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1584384377657" />
+    <state x="337" y="184" key="com.intellij.ide.util.TipDialog/0.0.1280.720@0.0.1280.720" timestamp="1584444162954" />
     <state x="336" y="97" width="788" height="619" key="find.popup" timestamp="1584386113416">
       <screen x="0" y="0" width="1280" height="720" />
     </state>
