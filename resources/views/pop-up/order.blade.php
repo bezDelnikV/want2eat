@@ -126,7 +126,7 @@
                 </div>
             </div>
         </div>
-        <button class="btn-send-deliver" id="modal-order-confirm-send" onclick="redirectToBasket()">Далі</button>
+        <button class="btn-send-deliver" id="modal-order-confirm-send" onclick="authorizeAndSendOrder()">Далі</button>
     </div>
 </div>
 

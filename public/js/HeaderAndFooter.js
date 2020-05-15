@@ -41,9 +41,6 @@ $(document).ready(function () {
             $('#email-order').val(user_info['email']);
             $('#phone-order').val(user_info['phone']);
         }
-        if (localStorage.getItem('token') != null) {
-            generateProfile();
-        }
         $('#datetimepicker').datetimepicker({
             locale: 'uk',
             minDate: new Date()

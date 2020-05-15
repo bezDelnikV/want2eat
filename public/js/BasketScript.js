@@ -38,7 +38,7 @@ function deliveryDistance(shop_address, client_address, region_address, category
             let delivery_min_price = parseInt(RegionSettings['settings'].find(el => el['settings_key_id'] == 'delivery_min_price')['value']);
             let delivery_price_for_km = parseInt(RegionSettings['settings'].find(el => el['settings_key_id'] == 'delivery_price_for_km')['value']);
             let delivery_price = 0;
-            if(rout!=undefined) {
+            if (rout != undefined) {
                 rout['legs'].forEach(el => {
                     distance_delivery += el['distance']['value'];
                 });
@@ -72,31 +72,25 @@ function getGeocode(address, end_address = false) {
         url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&language=uk&sensor=false&key=AIzaSyDzXAzUwHGGt1msT_VUpU5te1GI2_iPLG0',
         method: "GET",
         success: function (data) {
-            if (end_address) {
+
                 RegionSettings['formatted_address'] = data['results'][0]['formatted_address'];
                 RegionSettings['location'] = data['results'][0]['geometry']['location'];
-                if (localStorage.getItem(
-                    'client_info') != null) {
-                    let client_info = JSON.parse(localStorage.getItem('client_info'));
-                    getGeocode(client_info['street-order'] + ', ' + client_info['build-order'] + ', ' + client_info['city-order']);
+            if (data['status'] != 'ZERO_RESULTS') {
+                if (ShopDeliveryInfo.length > 0) {
+                    let full_shop_address = ShopDeliveryInfo[0]['street'] + ', ' + ShopDeliveryInfo[0]['build'] + ', ' + ShopDeliveryInfo[0]['city'] + ", Рівненська область,33000";
+                    deliveryDistance(full_shop_address, full_shop_address, RegionSettings['formatted_address'], 13, 0);
                 }
             } else {
-                if (data['status'] != 'ZERO_RESULTS') {
-                    if (ShopDeliveryInfo.length > 0) {
-                        deliveryDistance(ShopDeliveryInfo[0]['street'] + ', ' + ShopDeliveryInfo[0]['build'] + ', ' + ShopDeliveryInfo[0]['city'] + ", Рівненська область,33000", data['results'][0]['formatted_address'], RegionSettings['formatted_address'], 13, 0);
-                    }
-                } else {
-                    ShopDeliveryInfo.forEach(el => {
-                        let buttons = $('#delivery-button-shop-id-' + el['id']).parent().children();
-                        $(buttons[0]).attr('class', 'disable-btn');
-                        $(buttons[0]).attr('disabled', true);
-                        $(buttons[1]).attr('class', 'active-btn');
-                        el['delivery_price'] = 0;
-                        el['delivery_start_price'] = 0;
-                        el['is_delivery'] = 0;
-                    });
-                    recountAllFullPrice();
-                }
+                ShopDeliveryInfo.forEach(el => {
+                    let buttons = $('#delivery-button-shop-id-' + el['id']).parent().children();
+                    $(buttons[0]).attr('class', 'disable-btn');
+                    $(buttons[0]).attr('disabled', true);
+                    $(buttons[1]).attr('class', 'active-btn');
+                    el['delivery_price'] = 0;
+                    el['delivery_start_price'] = 0;
+                    el['is_delivery'] = 0;
+                });
+                recountAllFullPrice();
             }
         }
 
@@ -330,7 +324,6 @@ function deleteProd(btn, prodId) {
 
 
 function send() {
-
     let validate = true;
     let regaxPhone = '[3,8]{2}?0[0-9]{2}[0-9]{7}$';
     let regaxEmail = '^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$';

@@ -37,7 +37,7 @@
 
 .main-basket {
     width: 100%;
-    min-height: calc(100vh - 286px);
+    min-height: calc(100vh - 265px);
 }
 
 .main-basket:before {
@@ -67,33 +67,16 @@
     padding-top: 35px;
 }
 
-.change-address {
-    color: #979797;
-    height: 24px;
-    background: white;
-    background-repeat: no-repeat;
-    display: block;
-    font-size: 15px;
-    padding-bottom: 7px;
-    padding-top: 10px;
-    text-align: center;
-    box-sizing: unset;
-}
 
-.change-address:hover {
-    color: #E63616;
-    cursor: pointer;
-}
+
+
 
 .basket-container {
     width: 80%;
     margin: auto;
 }
 
-.change-address span:before {
-    content: '\e062';
-    font-family: 'Glyphicons Halflings';
-}
+
 
 .basket-container-item {
     background: white;

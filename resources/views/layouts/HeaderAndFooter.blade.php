@@ -32,7 +32,6 @@
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T3Q3SB2"
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
-@include('pop-up.authorize')
 @include('pop-up.order')
 @include('pop-up.profile')
 <div class="header">
@@ -45,7 +44,7 @@
         <span class="bottom"></span>
     </button>
     <ul id="header-menu" class="header-menu disable">
-        <li class="header-cart"><a href="javascript://" onclick="openModalOrder()">
+        <li class="header-cart"><a href="javascript://" onclick="redirectToCart()">
                 <svg class="full_delivery_svg" width="30" height="27" viewBox="0 0 30 27" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -54,9 +53,7 @@
                 </svg>
                 <div>Корзина<span id="count-delivery-dish"></span></div>
             </a></li>
-        <li class="header-account" id="profile-info">
-            <div><a href="javascript://" onclick="openModal('modal-window-authorize')">Авторизація</a></div>
-        </li>
+
         <li>
             <div class="header-mobile-info">
                 <div>

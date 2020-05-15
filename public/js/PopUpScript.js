@@ -59,7 +59,7 @@ function generateJsonLd(prod) {
         '@type': 'Product',
         'name': prod['name'],
         'image': [
-            prod['photo_url'] == '' ? window.location.hostname+'/img/thumb-small.png' : 'http://adm.want2eat.com.ua/images/' + prod['photo_url'],
+            prod['photo_url'] == '' ? window.location.hostname + '/img/thumb-small.png' : 'http://adm.want2eat.com.ua/images/' + prod['photo_url'],
         ],
         'description': prod['info'],
         "offers": {
@@ -112,15 +112,18 @@ function addToCart() {
 }
 
 
-function authorize() {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($('#email-enter').val())) {
+function authorizeAndSendOrder() {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($('#email-order').val())) {
         $.ajax({
             url: 'https://adm.want2eat.com.ua/api/auth/?',
             method: 'POST',
             dataType: 'json',
             data: {
-                identificate: $('#email-enter').val(),
-                password: $.md5($('#password-enter').val())
+                identificate: $('#email-order').val(),
+                password: '',
+                first_name: $('#name-order').val(),
+                last_name: '',
+                phone: $('#phone-register').val(),
             },
             success: function (data) {
                 // console.log(data);
@@ -128,13 +131,13 @@ function authorize() {
                     localStorage.setItem('token', data.data.user.token);
                     delete data.data.user.token;
                     localStorage.setItem('user', JSON.stringify(data.data.user));
-                    $('#modal-window-authorize').attr('style', 'display:none;');
                     $('body').removeAttr('style');
-                    generateProfile();
+                    // generateProfile();
                     user_info = JSON.parse(localStorage.getItem('user'));
                     $('#name-order').val(user_info['first_name'] + ' ' + user_info['last_name']);
                     $('#email-order').val(user_info['email']);
                     $('#phone-order').val(user_info['phone']);
+                    send();
                 } else {
                     alert(data.message);
                 }
@@ -176,9 +179,8 @@ function register() {
                     localStorage.setItem('token', data.data.user.token);
                     delete data.data.user.token;
                     localStorage.setItem('user', JSON.stringify(data.data.user));
-                    $('#modal-window-authorize').attr('style', 'display:none;');
                     $('body').removeAttr('style');
-                    generateProfile();
+                    // generateProfile();
                 } else if (data.code == 400) {
                     alert(data.message);
                 } else {
@@ -246,17 +248,14 @@ function clientAddressInfo(redirect = false) {
     }
 }
 
-function openModalOrder() {
-    if (localStorage.getItem('token') != null) {
-        if (window.location.pathname == '/cart') {
-            $('#modal-order-confirm-send').attr('onclick', 'clientAddressInfo()');
-        } else {
-            $('#modal-order-confirm-send').attr('onclick', 'clientAddressInfo(true)');
-        }
-        openModal('modal-window-order');
-    } else {
-        openModal('modal-window-authorize');
+function redirectToCart() {
+    if (window.location.pathname != '/cart') {
+        window.location.pathname = '/cart'
     }
+}
+
+function openModalOrder() {
+    openModal('modal-window-order');
 }
 
 
@@ -270,47 +269,21 @@ function changeBtnClass(elem) {
     }
 }
 
-function generateProfile() {
-    $('#profile-info').empty();
+// function generateProfile() {
+//     $('#profile-info').empty();
+//
+//     $('#profile-info').append($('<div>')
+//         .append($('<a>')
+//             .attr('href', 'javascript://')
+//             .attr('onclick', 'openModal(\'modal-window-prodile\')')
+//             .append('Профіль')
+//         ));
+//     let user = JSON.parse(localStorage.getItem('user'));
+//     $('#profile-name').val(user['first_name'] + ' ' + user['last_name']);
+//     $('#profile-email').val(user['email']);
+//     $('#profile-phone').val(user['phone']);
+// }
 
-    $('#profile-info').append($('<div>')
-        .append($('<a>')
-            .attr('href', 'javascript://')
-            .attr('onclick', 'openModal(\'modal-window-prodile\')')
-            .append('Профіль')
-        ));
-    let user = JSON.parse(localStorage.getItem('user'));
-    $('#profile-name').val(user['first_name'] + ' ' + user['last_name']);
-    $('#profile-email').val(user['email']);
-    $('#profile-phone').val(user['phone']);
-}
-
-function logout() {
-    $.ajax({
-        url: 'https://adm.want2eat.com.ua/api/auth/logout/',
-        method: 'POST',
-        dataType: 'json',
-        data: {
-            token: localStorage.getItem('token')
-        },
-        success: function (data) {
-            localStorage.removeItem('token');
-            localStorage.removeItem('user');
-        },
-        error: function (data) {
-            localStorage.removeItem('token');
-            localStorage.removeItem('user');
-        }
-    });
-    $('#modal-window-prodile').attr('style', 'display:none;');
-    $('#profile-info').empty();
-    $('#profile-info').append($('<div>')
-        .append($('<a>')
-            .attr('href', 'javascript://')
-            .attr('onclick', 'openModal(\'modal-window-authorize\')')
-            .append('Авторизація')
-        ));
-}
 
 function update() {
     let data = {};
@@ -362,7 +335,7 @@ function update() {
                 $('#profile-password').empty();
                 $('#profile-password-repeat').empty();
             },
-            error:function (data) {
+            error: function (data) {
                 sessionStorage.removeItem('user');
                 sessionStorage.removeItem('token');
                 alert('Будь ласка повторіть авторизацію!');
