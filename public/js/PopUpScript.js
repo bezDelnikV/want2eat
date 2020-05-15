@@ -113,7 +113,15 @@ function addToCart() {
 
 
 function authorizeAndSendOrder() {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($('#email-order').val())) {
+    let validate = true;
+    let regaxPhone = '[3,8]{2}?0[0-9]{2}[0-9]{7}$';
+    if (false == $('#phone-order').val().match(regaxPhone)) {
+        validate = false;
+    }
+    if (false == /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($('#email-order').val())) {
+        validate = false;
+    }
+    if (validate) {
         $.ajax({
             url: 'https://adm.want2eat.com.ua/api/auth/?',
             method: 'POST',
@@ -123,7 +131,7 @@ function authorizeAndSendOrder() {
                 password: '',
                 first_name: $('#name-order').val(),
                 last_name: '',
-                phone: $('#phone-register').val(),
+                phone: $('#phone-order').val(),
             },
             success: function (data) {
                 // console.log(data);
@@ -134,9 +142,6 @@ function authorizeAndSendOrder() {
                     $('body').removeAttr('style');
                     // generateProfile();
                     user_info = JSON.parse(localStorage.getItem('user'));
-                    $('#name-order').val(user_info['first_name'] + ' ' + user_info['last_name']);
-                    $('#email-order').val(user_info['email']);
-                    $('#phone-order').val(user_info['phone']);
                     send();
                 } else {
                     alert(data.message);
@@ -151,62 +156,21 @@ function authorizeAndSendOrder() {
         })
         ;
     } else {
-        alert("Не вірний email адрес!");
+        alert("Не вірний email адрес або телефон!");
     }
 }
 
-function register() {
-    if ($('#password-register').val().length < 6) {
-        alert('Пароль закороткий');
-    } else if ($('#password-register').val() != $('#return-password-register').val()) {
-        alert('Паролі не збігаються');
-    } else if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test($('#email-register').val())) {
-        $.ajax({
-            url: 'https://adm.want2eat.com.ua/api/auth/?',
-            method: 'POST',
-            dataType: 'json',
-            data: {
-                identificate: $('#email-register').val(),
-                password: $.md5($('#password-register').val()),
-                first_name: $('#name-register').val(),
-                last_name: $('#surname-register').val(),
-                email: $('#email-register').val(),
-                first_name: $('#name-register').val(),
-                phone: $('#phone-register').val(),
-            },
-            success: function (data) {
-                if (data.code == 200) {
-                    localStorage.setItem('token', data.data.user.token);
-                    delete data.data.user.token;
-                    localStorage.setItem('user', JSON.stringify(data.data.user));
-                    $('body').removeAttr('style');
-                    // generateProfile();
-                } else if (data.code == 400) {
-                    alert(data.message);
-                } else {
-                    alert(data.message);
-                }
-
-            },
-            error: function (data) {
-                console.log(data);
-            }
-        });
-    } else {
-        alert("Не вірний email адрес!");
-    }
-}
 
 function clientAddressInfo(redirect = false) {
     let validate = true;
     let regaxPhone = '^(38)?0[0-9]{2}[0-9]{7}$';
-    let regaxEmail = '^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$';
-    if ($('#phone-order').val().match(regaxPhone) == null) {
-        validate = false;
-    }
-    if ($('#email-order').val().match(regaxEmail) == null) {
-        validate = false;
-    }
+    // let regaxEmail = '^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$';
+    // if ($('#phone-order').val().match(regaxPhone) == null) {
+    //     validate = false;
+    // }
+    // if ($('#email-order').val().match(regaxEmail) == null) {
+    //     validate = false;
+    // }
     validate = $('#name-order').val() ? validate : false;
     validate = $('#city-order').val() ? validate : false;
     validate = $('#street-order').val() ? validate : false;
@@ -234,22 +198,25 @@ function clientAddressInfo(redirect = false) {
             'date_delivery': data_delivery,
         };
         localStorage.setItem('client_info', JSON.stringify(client_info));
-        if (redirect) {
-            window.location.href = '/cart';
-        } else {
-            $('#modal-window-order').attr('style', 'display:none;');
-            $('body').removeAttr('style');
-            let client_info = JSON.parse(localStorage.getItem('client_info'));
-            getGeocode(client_info['street-order'] + ', ' + client_info['build-order'] + ', ' + client_info['city-order']);
-        }
-    } else {
-        // console.log(validate);
-        alert("Будь-ласка, заповніть всі необхідні поля правильно!");
+        //     if (redirect) {
+        //         window.location.href = '/cart';
+        //     } else {
+        //         $('#modal-window-order').attr('style', 'display:none;');
+        //         $('body').removeAttr('style');
+        //         let client_info = JSON.parse(localStorage.getItem('client_info'));
+        //         getGeocode(client_info['street-order'] + ', ' + client_info['build-order'] + ', ' + client_info['city-order']);
+        //     }
+        // } else {
+        //     // console.log(validate);
+        //     alert("Будь-ласка, заповніть всі необхідні поля правильно!");
     }
 }
 
 function redirectToCart() {
-    if (window.location.pathname != '/cart') {
+    let cart_products = sessionStorage.getItem('elements');
+    cart_products = cart_products ? JSON.parse(cart_products).length > 0 : false;
+    console.log(cart_products);
+    if (window.location.pathname != '/cart' && cart_products) {
         window.location.pathname = '/cart'
     }
 }

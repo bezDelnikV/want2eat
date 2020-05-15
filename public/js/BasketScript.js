@@ -73,8 +73,8 @@ function getGeocode(address, end_address = false) {
         method: "GET",
         success: function (data) {
 
-                RegionSettings['formatted_address'] = data['results'][0]['formatted_address'];
-                RegionSettings['location'] = data['results'][0]['geometry']['location'];
+            RegionSettings['formatted_address'] = data['results'][0]['formatted_address'];
+            RegionSettings['location'] = data['results'][0]['geometry']['location'];
             if (data['status'] != 'ZERO_RESULTS') {
                 if (ShopDeliveryInfo.length > 0) {
                     let full_shop_address = ShopDeliveryInfo[0]['street'] + ', ' + ShopDeliveryInfo[0]['build'] + ', ' + ShopDeliveryInfo[0]['city'] + ", Рівненська область,33000";
@@ -325,14 +325,7 @@ function deleteProd(btn, prodId) {
 
 function send() {
     let validate = true;
-    let regaxPhone = '[3,8]{2}?0[0-9]{2}[0-9]{7}$';
-    let regaxEmail = '^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$';
-    if ($('#phone-order').val().match(regaxPhone) == null) {
-        validate = false;
-    }
-    if ($('#email-order').val().match(regaxEmail) == null) {
-        validate = false;
-    }
+
     validate = $('#name-order').val() ? validate : false;
     validate = $('#city-order').val() ? validate : false;
     validate = $('#street-order').val() ? validate : false;
@@ -396,9 +389,7 @@ function send() {
                 }
             },
             error: function (data) {
-                sessionStorage.removeItem('user');
-                sessionStorage.removeItem('token');
-                alert('Будь ласка повторіть авторизацію!');
+                console.log(data);
             }
         })
     }
