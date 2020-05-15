@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f87b0092-3c2e-4b99-ba43-59baddba3dc0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/BasketStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/BasketStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/HeaderAndFooter.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/HeaderAndFooter.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/ShopsStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/ShopsStyle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/BasketScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/BasketScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/HeaderAndFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/HeaderAndFooter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/PopUpScript.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/PopUpScript.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/basket.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/basket.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/HeaderAndFooter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/HeaderAndFooter.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pop-up/order.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pop-up/order.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +219,7 @@
       <workItem from="1584384378116" duration="2300000" />
       <workItem from="1584444163544" duration="301000" />
       <workItem from="1589471133584" duration="8754000" />
-      <workItem from="1589546894432" duration="1942000" />
+      <workItem from="1589546894432" duration="2575000" />
     </task>
     <servers />
   </component>
